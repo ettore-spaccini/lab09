@@ -1,6 +1,8 @@
 package it.unibo.mvc;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Implementation of a simple controller.
@@ -8,14 +10,15 @@ import java.util.*;
 public final class SimpleController implements Controller {
     private final List<String> stringHistory; 
     private String nextString;
+
     /**
-     * Constructor
+     * Constructor.
      */
     public SimpleController() {
-        this.stringHistory = new ArrayList<String>();
+        this.stringHistory = new ArrayList<>();
     }
     @Override
-    public void nextStringToPrint(String stringToPrint) {
+    public void nextStringToPrint(final String stringToPrint) {
         Objects.requireNonNull(stringToPrint, "Null argument are not accepted");
         this.nextString = stringToPrint; 
     }

@@ -9,21 +9,21 @@ public interface Controller {
      * @param stringToPrint
      * @throws NullPointerException if stringToPrint is null
      */
-    public void nextStringToPrint(final String stringToPrint);
+    void nextStringToPrint(String stringToPrint);
     /**
      * This method gets the next string to print.
      * @return the next string to print 
      * @throws IllegalStateException if there isn't a string to print
      */
-    public String getNextStringToPrint();
+    String getNextStringToPrint();
     /**
      * This method returns a list of strings representing those previously printed.
      * @return a list of string 
      */
-    public List<String> getHistoryOfPrintedString();
+    List<String> getHistoryOfPrintedString();
     /**
      * This method prints the current string.
      * @throws IllegalStateException if the current string is unset
      */
-    public void printCurrentString();
+    void printCurrentString();
 }

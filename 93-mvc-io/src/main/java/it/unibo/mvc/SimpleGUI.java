@@ -22,7 +22,7 @@ public final class SimpleGUI {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame();
     /**
-     * Constructorup the whole view is set up here
+     * @param controller
      */
     public SimpleGUI(final Controller controller) {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,22 +44,22 @@ public final class SimpleGUI {
         mainPanel.add(southJPanel, BorderLayout.SOUTH);
         final JButton print = new JButton("Print");
         southJPanel.add(print, BorderLayout.CENTER);
-        final JButton showHistoryButton= new JButton("Show History");
+        final JButton showHistoryButton = new JButton("Show History");
         southJPanel.add(showHistoryButton, BorderLayout.EAST);
         /*
          * Handler
          */
         print.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 final String stringToPrint = textField.getText();
                 controller.nextStringToPrint(stringToPrint);
                 controller.printCurrentString();
-            }  
+            }
         });
         showHistoryButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 for (final String string: controller.getHistoryOfPrintedString()) {
                     textArea.append(string);
                     textArea.append("\n");
