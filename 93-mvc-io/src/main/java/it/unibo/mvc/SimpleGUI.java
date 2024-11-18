@@ -5,13 +5,13 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 /**
  * A very simple program using a graphical interface.
@@ -34,7 +34,10 @@ public final class SimpleGUI {
         mainPanel.add(textField, BorderLayout.NORTH);
         final JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
-        mainPanel.add(textArea, BorderLayout.CENTER);
+        //aggiunta estetica
+        final JScrollPane scroll = new JScrollPane(textArea);
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        mainPanel.add(scroll, BorderLayout.CENTER);
         //create two buttons(SOUTH)
         final JPanel southJPanel = new JPanel(); 
         southJPanel.setLayout(new BorderLayout());
