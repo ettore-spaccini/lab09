@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="10.20.1">
 <file name="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\Controller.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 </file>
 <file name="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java">
 </file>

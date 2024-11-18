@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -32,15 +33,19 @@ public final class SimpleGUIWithFileChooser {
         //panel 1
         final JPanel panel1 = new JPanel(new BorderLayout());
         frame.setContentPane(panel1);
+        //Save button
         final JButton save = new JButton("Save");
         panel1.add(save, BorderLayout.SOUTH);
+        //textArea
         final JTextArea tArea = new JTextArea();
         panel1.add(tArea, BorderLayout.CENTER);
         //panel 2
         final JPanel panel2 = new JPanel(new BorderLayout());
         panel1.add(panel2, BorderLayout.NORTH);
+        //textField
         final JTextField textField = new JTextField();
         panel2.add(textField, BorderLayout.CENTER);
+        //Browser Button
         final JButton browserButton = new JButton("Browse..."); 
         panel2.add(browserButton, BorderLayout.EAST);
         /**
@@ -68,8 +73,12 @@ public final class SimpleGUIWithFileChooser {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                final String content = tArea.getText();
-                controller.writeOnFile(content);
+                try {
+                    controller.writeOnFile(tArea.getText());
+                } catch (final IOException e2) {
+                    JOptionPane.showMessageDialog(null, e2.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    e2.printStackTrace(); // NOPMD: allowed as this is just an exercise
+                }
             }
         });
     }

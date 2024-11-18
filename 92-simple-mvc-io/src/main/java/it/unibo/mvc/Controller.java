@@ -2,8 +2,11 @@ package it.unibo.mvc;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+
 /**
  * Application controller. Performs the I/O.
  */
@@ -45,15 +48,14 @@ public class Controller {
      * This function write the argument passed as parameter on the file.
      * 
      * @param stringToWrite the string to write on the file 
-     * @throws IOExeption 
+     * @throws IOException 
      */
-    public void writeOnFile(final String stringToWrite) {
+    public void writeOnFile(final String stringToWrite) throws IOException {
         try (
-            BufferedWriter bStream = new BufferedWriter(new FileWriter(this.getCurrentFile()));
+            BufferedWriter bStream = new BufferedWriter(
+            new OutputStreamWriter(new FileOutputStream(this.getCurrentFile()), StandardCharsets.UTF_8));
         ) {
             bStream.write(stringToWrite);
-        } catch (IOException e) {
-            e.printStackTrace(); // NOPMD: allowed as this is just an exercise
         }
     }
 }
