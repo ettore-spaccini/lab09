@@ -112,6 +112,7 @@ public class BadIOGUI {
          * OK, ready to push the frame onscreen
          */
         frame.setVisible(true);
+        frame.pack();
     }
 
     /**
