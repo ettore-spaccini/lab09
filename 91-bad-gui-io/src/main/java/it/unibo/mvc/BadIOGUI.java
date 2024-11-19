@@ -42,7 +42,6 @@ public class BadIOGUI {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
         final JButton write = new JButton("Write on file");
-       
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //create a new panel
