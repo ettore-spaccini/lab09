@@ -28,7 +28,7 @@ public final class SimpleGUIWithFileChooser {
      * Constructor of SimpleGUIWithFileChooser.
      * @param controller
      */
-    public SimpleGUIWithFileChooser(final Controller controller) {
+    private SimpleGUIWithFileChooser(final Controller controller) {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //panel 1
         final JPanel panel1 = new JPanel(new BorderLayout());
@@ -83,27 +83,11 @@ public final class SimpleGUIWithFileChooser {
         });
     }
     private void display() {
-        /*
-            * Make the frame one fifth the resolution of the screen. This very method is
-            * enough for a single screen setup. In case of multiple monitors, the
-            * primary is selected. In order to deal coherently with multimonitor
-            * setups, other facilities exist (see the Java documentation about this
-            * issue). It is MUCH better than manually specify the size of a window
-            * in pixel: it takes into account the current resolution.
-            */
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         final int sw = (int) screen.getWidth();
         final int sh = (int) screen.getHeight();
         frame.setSize(sw / PROPORTION, sh / PROPORTION);
-        /*
-            * Instead of appearing at (0,0), upper left corner of the screen, this
-            * flag makes the OS window manager take care of the default positioning
-            * on screen. Results may vary, but it is generally the best choice.
-            */
         frame.setLocationByPlatform(true);
-        /*
-            * OK, ready to push the frame onscreen
-            */
         frame.setVisible(true);
     }
     /**

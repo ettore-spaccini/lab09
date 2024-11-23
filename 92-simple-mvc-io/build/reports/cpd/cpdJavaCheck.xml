@@ -2,75 +2,13 @@
 <pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          pmdVersion="7.7.0"
-         timestamp="2024-11-18T18:55:33.6341637+01:00"
+         timestamp="2024-11-19T14:57:12.7807929+01:00"
          version="1.0.0"
          xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
    <file path="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\Controller.java"
          totalNumberOfTokens="129"/>
    <file path="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java"
-         totalNumberOfTokens="254"/>
+         totalNumberOfTokens="264"/>
    <file path="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUIWithFileChooser.java"
-         totalNumberOfTokens="428"/>
-   <duplication lines="45" tokens="149">
-      <file begintoken="221"
-            column="60"
-            endcolumn="29"
-            endline="78"
-            endtoken="369"
-            line="34"
-            path="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java"/>
-      <file begintoken="650"
-            column="10"
-            endcolumn="29"
-            endline="113"
-            endtoken="798"
-            line="72"
-            path="C:\Users\espac\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUIWithFileChooser.java"/>
-      <codefragment><![CDATA[        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        /*
-        * Handlers
-        */
-        save.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
-                try {
-                    controller.writeOnFile(tArea.getText());
-                } catch (final IOException e2) {
-                    JOptionPane.showMessageDialog(null, e2.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-    }
-    private void display() {
-        /*
-            * Make the frame one fifth the resolution of the screen. This very method is
-            * enough for a single screen setup. In case of multiple monitors, the
-            * primary is selected. In order to deal coherently with multimonitor
-            * setups, other facilities exist (see the Java documentation about this
-            * issue). It is MUCH better than manually specify the size of a window
-            * in pixel: it takes into account the current resolution.
-            */
-        final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        final int sw = (int) screen.getWidth();
-        final int sh = (int) screen.getHeight();
-        frame.setSize(sw / PROPORTION, sh / PROPORTION);
-        /*
-            * Instead of appearing at (0,0), upper left corner of the screen, this
-            * flag makes the OS window manager take care of the default positioning
-            * on screen. Results may vary, but it is generally the best choice.
-            */
-        frame.setLocationByPlatform(true);
-        /*
-            * OK, ready to push the frame onscreen
-            */
-        frame.setVisible(true);
-    }
-    /**
-     * Lanch the application.
-     * @param args
-     */
-    public static void main(final String[] args) {
-        final var view = new SimpleGUI(new Controller());
-]]></codefragment>
-   </duplication>
+         totalNumberOfTokens="433"/>
 </pmd-cpd>
